@@ -1,0 +1,174 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&family=Roboto:ital,wght@0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VirtualMe Demo</title>
+    <link href="./main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="main" style="text-align: center;margin:auto; right:0px; left: 0px;">
+      <h2>VirtualMe Demo</h2>
+       <div class="actions">
+        <input type="button" id="buttonOpen" value="Open Avaturn" />
+        <input type="button" id="buttonClose" value="Close Avaturn" />
+      </div> 
+    </section>
+    <div id="avaturn-sdk-container"></div>
+    <div style="position: fixed">
+      <a
+        href="https://avaturn.me"
+        style="text-decoration: none; color: #0c0c0e;"
+        >AvaturnAA</a
+      >
+    </div>
+    
+    <div id="container"></div>
+  
+
+    Import maps polyfill
+    Remove this when import maps will be widely supported
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="main.js">
+    </script>
+  </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&family=Roboto:ital,wght@0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>VirtualMe Demo</title>
+  <link href="../main.css" rel="stylesheet" />
+  <style>
+    #movement-menu {
+      position: fixed;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <section class="main" style="text-align: center; margin:auto; right:0px; left: 0px;">
+    <h2>VirtualMe Demo</h2>
+  </section>
+  <div id="avaturn-sdk-container"></div>
+  
+  <!-- Movement Selection Menu -->
+  <div id="movement-menu">
+    <label for="movement-select">Choose a movement: <br> </label>
+    <select id="movement-select" onchange="updateMovement(this.value)">
+      <option value="fight-combo.glb">Fight Combo</option>
+      <option value="fight-funny.glb">Fight Funny</option>
+      <option value="fight-hits.glb">Fight Hits</option>
+      <option value="fight-jab.glb">Fight Jab</option>
+      <option value="fight-jabs.glb">Fight Jabs</option>
+      <option value="fight-kick.glb">Fight Kick</option>
+      <option value="knocking-cheer.glb">Knocking Cheer</option>
+      <option value="asian-hi.glb">Selfie Pose</option>
+      <option value="long-frontFlip.glb">Long Front Flip</option>
+      <option value="backflip.glb">Backflip</option>
+      <option value="maestro.glb">Maestro</option>
+      <option value="muscle-flex.glb">Muscle Flex</option>
+      <option value="pose-handBehindHead.glb">Pose Hand Behind Head</option>
+      <option value="preRace-kneel.glb">Pre-Race Kneel</option>
+      <option value="pushing-hard.glb">Pushing Hard</option>
+      <option value="pushups.glb">Pushups</option>
+      <option value="running-frozen.glb">Running Frozen</option>
+      <option value="running-frozen2.glb">Running Frozen 2</option>
+      <option value="running.glb">Running</option>
+      <option value="sitting-legsCross.glb">Sitting Legs Cross</option>
+      <option value="smash-frozen.glb">Smash Frozen</option>
+      <option value="smoking.glb">Smoking</option>
+      <option value="standing-chill.glb">Standing Chill</option>
+      <option value="standing-pose.glb">Standing Pose</option>
+      <option value="standing-serious.glb">Standing Serious</option>
+      <option value="standing-straight.glb">Standing Straight</option>
+      <option value="standing.glb">Standing</option>
+      <option value="stop-concern.glb">Stop Concern</option>
+      <option value="superman-landing.glb">Superman Landing</option>
+      <option value="tantrum.glb">Tantrum</option>
+      <option value="walk-fashionShow.glb">Walk Fashion Show</option>
+      <option value="walk-slow.glb">Walk Slow</option>
+      <option value="wiggling-dance.glb">Wiggling Dance</option>
+      <option value="you-callme.glb">You Call Me</option>
+      <option value="cartwheel.glb">Cartwheel</option>
+      <option value="crouch-walk.glb">Crouch Walk</option>
+      <option value="crush-thinking.glb">Crush Thinking</option>
+      <option value="damn-still.glb">Damn Still</option>
+      <option value="dance-ballerina-frozen.glb">Dance Ballerina Frozen</option>
+      <option value="dance-boss.glb">Dance Boss</option>
+      <option value="dance-crazy.glb">Dance Crazy</option>
+      <option value="dance-happy.glb">Dance Happy</option>
+      <option value="dance-lfg.glb">Dance LFG</option>
+      <option value="dance-rock.glb">Dance Rock</option>
+      <option value="dance-win.glb">Dance Win</option>
+      <option value="egyptian-god.glb">Egyptian God</option>
+      <option value="facepalm.glb">Facepalm</option>
+      <option value="football-kick.glb">Football Kick</option>
+      <option value="gorilla.glb">Gorilla</option>
+      <option value="hand-on-hip.glb">Hand on Hip</option>
+      <option value="jump-yeeha.glb">Jump Yeeha</option>
+
+    </select>
+  </div>
+
+  <div style="position: fixed">
+    <a href="https://avaturn.me" style="text-decoration: none; color: #0c0c0e;">AvaturnAA</a>
+  </div>
+
+  <div id="container"></div>
+
+  <!-- Import maps polyfill -->
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.157.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module" src="../main.js"></script>
+  <script>
+    // Placeholder function to handle movement change
+    function updateMovement(movementFile) {
+      console.log('Selected movement:', movementFile);
+      // Here you will implement the logic to change the avatar's movement
+    }
+  </script>
+</body>
+</html>
