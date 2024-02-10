@@ -116,10 +116,10 @@ async function init() {
   scene.add(mesh);
 
   // Load default avatar
-  currentAvatar = await loadAvatar('public/model-4.glb');
+  currentAvatar = await loadAvatar('public/models/taha.glb');
 
   // Load default animation
-  loadAnimation('public/animations/fight-combo.glb');
+  loadAnimation('public/animations/standing-chill.glb');
 
   stats = new Stats();
   container.appendChild(stats.dom);
