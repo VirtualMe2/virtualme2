@@ -1,2 +1,15 @@
 node_modules/
 .env
+.vercel
+
+# Additional files to ignore
+main2.js
+archive/
+public/brown_photostudio_01.hdr
+public/default_model.glb
+public/demo2.glb
+public/model-3.glb
+public/model.glb
+public/test-photo.jpg
+public/models/viraj.glb
+public/models/viraj2.glb
